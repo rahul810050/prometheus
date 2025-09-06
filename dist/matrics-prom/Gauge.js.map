@@ -1,0 +1,1 @@
+{"version":3,"file":"Gauge.js","sourceRoot":"","sources":["../../src/matrics-prom/Gauge.ts"],"names":[],"mappings":"AAAA,OAAO,MAAM,MAAM,aAAa,CAAA;AAEhC,MAAM,CAAC,MAAM,cAAc,GAAG,IAAI,MAAM,CAAC,KAAK,CAAC;IAC3C,IAAI,EAAE,qBAAqB;IAC3B,IAAI,EAAE,2BAA2B;CACpC,CAAC,CAAA"}

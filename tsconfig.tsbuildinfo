@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/matrics.ts","./src/matrics-prom/Gauge.ts","./src/matrics-prom/counter.ts","./src/matrics-prom/histogram.ts","./src/middlewares/middleware.ts"],"version":"5.9.2"}
