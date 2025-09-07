@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: ./
+    ports:
+      - "3000:3000"
+    networks:
+      - monitor
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitor
+    depends_on:
+      - node-app
+    restart: unless-stopped
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    networks:
+      - monitor
+    environment:
+      - GF_ADMIN_PASSWORD=admin
+
+networks:
+  monitor:

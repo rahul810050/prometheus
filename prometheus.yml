@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s # every 15 seconds it will scrape the target
+
+scrape_configs:
+  - job_name: "nodejs-app"
+    static_configs:
+      - targets: ['node-app:3000']

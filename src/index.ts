@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(middleware);
 
-app.use("/api/v1", router)
+app.use("/matrics", router)
 
 app.get("/wait", async (req: Request, res: Response) => {
     await new Promise(s => setTimeout(s, Math.random() * 10000));
@@ -20,6 +20,12 @@ app.get("/wait", async (req: Request, res: Response) => {
 
 app.post("/", (req: Request, res: Response)=> {
     res.send("Hello post endpoint");
+})
+app.get("/matrics", async (req: Request, res: Response)=> {
+    console.log(client.register.contentType);
+    const metrics = await client.register.metrics();
+    res.set("content_type", client.register.contentType);
+    res.end(metrics);
 })
 
 app.get("/slow", (req: Request, res: Response)=> {
